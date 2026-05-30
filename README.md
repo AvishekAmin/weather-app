@@ -1,0 +1,2 @@
+### 🌤️ Weather App
+A React-based responsive web application that provides real-time weather conditions, temperature, humidity, wind speed, forecasts and location-based weather insights through API integration for seamless user experience across devices.

@@ -1,13 +1,19 @@
 # 🌤️ Weather App
 A React-based responsive web application that provides real-time weather information for any city worldwide using the OpenWeatherMap API and seamless user experience across devices.
 
+---
+
 ## Live Demo
 
 https://react-weather-avishek.netlify.app
 
+---
+
 ## Screenshot
 
-![Weather App Screenshot](./screenshot.png)
+![Weather App Screenshot](./Screenshot.png)
+
+---
 
 ## Features
 
@@ -20,6 +26,8 @@ https://react-weather-avishek.netlify.app
 * Error handling for invalid city names
 * Weather-based background images
 
+---
+
 ## Tech Stack
 
 - React.js
@@ -31,6 +39,8 @@ https://react-weather-avishek.netlify.app
 - Vite
 - Netlify
 
+---
+
 ## Installation
 
 ```bash
@@ -40,6 +50,8 @@ npm install
 npm run dev
 ```
 
+---
+
 ## Environment Variables
 
 Create a `.env` file in the root directory:
@@ -47,6 +59,8 @@ Create a `.env` file in the root directory:
 ```env
 VITE_WEATHER_API_KEY=your_openweathermap_api_key
 ```
+
+---
 
 ## Project Structure
 
@@ -79,10 +93,16 @@ weather-app/
 └── README.md
 ```
 
+---
 
 ## Author 
 
 Avishek Amin 
+
 GitHub: https://github.com/AvishekAmin 
+
 LinkedIn: https://www.linkedin.com/in/avishekamin
+
 Email: avishekamin207@gmail.com
+
+---

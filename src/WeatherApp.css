@@ -1,3 +1,25 @@
 .WeatherApp {
-    text-align: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #1e293b 50%,
+    #334155 100%
+  );
+  color: white;
+}
+
+.WeatherApp h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.weatherContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
 }

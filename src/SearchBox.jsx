@@ -7,7 +7,7 @@ export default function SearchBox({ updateInfo }) {
   let [city, setCity] = useState("");
   let [error, setError] = useState(false);
   const API_URL = "https://api.openweathermap.org/data/2.5/weather";
-  const API_KEY = "190d87db846f5219aeb3b41577706bb1";
+  const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
   let getWeatherInfo = async () => {
     try {
@@ -15,9 +15,11 @@ export default function SearchBox({ updateInfo }) {
         `${API_URL}?q=${city}&appid=${API_KEY}&units=metric`,
       );
       let jsonResponse = await response.json();
-      console.log(jsonResponse);
+      if (jsonResponse.cod !== 200) {
+        throw new Error("City not found");
+      }
       let result = {
-        city: city,
+        city: jsonResponse.name,
         temp: jsonResponse.main.temp,
         tempMin: jsonResponse.main.temp_min,
         tempMax: jsonResponse.main.temp_max,
@@ -37,13 +39,14 @@ export default function SearchBox({ updateInfo }) {
   };
 
   let handleSubmit = async (event) => {
+    event.preventDefault();
+    setError(false);
+
     try {
-      event.preventDefault();
-      console.log(city);
-      setCity("");
       let newInfo = await getWeatherInfo();
       updateInfo(newInfo);
-    } catch (err) {
+      setCity("");
+    } catch {
       setError(true);
     }
   };
@@ -63,7 +66,7 @@ export default function SearchBox({ updateInfo }) {
         <Button variant="contained" type="submit">
           Search
         </Button>
-        { error && <p style={{color: "red"}}>No such place exists</p> }
+        {error && <p style={{ color: "red" }}>No such place exists</p>}
         <br />
         <br />
       </form>

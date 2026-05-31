@@ -5,19 +5,13 @@ import Typography from "@mui/material/Typography";
 import ThunderstormIcon from "@mui/icons-material/Thunderstorm";
 import AcUnitIcon from "@mui/icons-material/AcUnit";
 import SunnyIcon from "@mui/icons-material/Sunny";
+import hot_img from "./assets/hot_img.jpg";
+import cold_img from "./assets/cold_img.jpg";
+import rain_img from "./assets/rain_img.jpg";
 
 import "./InfoBox.css";
 
 export default function InfoBox({ info }) {
-  const INIT_URL =
-    "https://images.unsplash.com/photo-1737543382270-6ff420c0fa84?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGhhenklMjB3ZWF0aGVyfGVufDB8fDB8fHww";
-  const HOT_URL =
-    "https://images.unsplash.com/photo-1604949210966-9440c324823f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-  const COLD_URL =
-    "https://images.unsplash.com/photo-1612208695882-02f2322b7fee?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sZCUyMHdlYXRoZXJ8ZW58MHx8MHx8fDA%3D";
-  const RAIN_URL =
-    "https://images.unsplash.com/photo-1519692933481-e162a57d6721?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-
   return (
     <div className="InfoBox">
       <div className="cardContainer">
@@ -26,10 +20,10 @@ export default function InfoBox({ info }) {
             sx={{ height: 140 }}
             image={
               info.humidity > 80
-                ? RAIN_URL
+                ? rain_img
                 : info.temp > 20
-                  ? HOT_URL
-                  : COLD_URL
+                  ? hot_img
+                  : cold_img
             }
             title="green iguana"
           />
